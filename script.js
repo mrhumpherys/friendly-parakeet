@@ -1,30 +1,38 @@
 // Assignment code here
 //object with random functions
-var randomFunctions = {
-  lower: randomLower,
-  upper: randomUpper,
-  number: randomNumber,
-  symbol: randomSymbol
-}
+//var lowerCase = {
+  //lower: randomLower,
+  //upper: randomUpper,
+  //number: randomNumber,
+  //symbol: randomSymbol
+//}
+let lowercaseBank = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+let uppercaseBank = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+let symbolBank = [' ', '!', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<','=','>','?','@','[', ']', '^', '_','`', '{', '|','}', '~']
+let numberBank = [0,1,2,3,4,5,6,7,8,9,0]
+
+let finalPasswordBank = ""
+let finalPassword = ""
+let superFinalPassword = ""
 
 
   //lower
-  function randomLower() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-  }
+  //function randomLower() {
+  //return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  //}
 //upper
-  function randomUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-  }
+  //function randomUpper() {
+  //return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  //}
 //number
-function randomNumber() {
-return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
+//function randomNumber() {
+//return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+//}
 //symbol
-function randomSymbol() {
-var symbols = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-return symbols[Math.floor(Math.random() * symbols.length)];
-}
+//function randomSymbol() {
+//var symbols = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+//return symbols[Math.floor(Math.random() * symbols.length)];
+//}
 var generatePassword = function() {
   //determine lenght
   var length = +window.prompt("Choose a password length anywhere betweeen 8 and 128");
@@ -40,13 +48,36 @@ var generatePassword = function() {
   var isNumber = window.confirm("Would you like numbers in your password?");
 
   var isSymbol = window.confirm("Would you like symbols in your password?");
+ console.log(isLower);
+ console.log(isUpper);
+ console.log(isNumber);
+ console.log(isSymbol);
+//ifs and for loop
+  if (isLower === true) {
+    var finalPasswordBank = finalPasswordBank += lowercaseBank
+  }
+  if (isUpper === true) {
+    var finalPasswordBank = finalPasswordBank += uppercaseBank
+  }
+  if (isNumber === true) {
+    var finalPasswordBank = finalPasswordBank += numberBank
+  }
+  if (isSymbol === true) {
+    var finalPasswordBank = finalPasswordBank += symbolBank
+  }
+  for (i=0; i < length; i++) {
+    var finalPassword = finalPasswordBank[Math.floor(Math.random() * finalPasswordBank.length)]
+   console.log(finalPassword);
+    
+    superFinalPassword = (finalPassword + superFinalPassword);
 
-//function with loop and ability to choose password makeup
-
-
-  console.log(isNumber);
-}
   
+
+  }
+   console.log(superFinalPassword);
+  return superFinalPassword;
+  
+};
 
 
 // Get references to the #generate element
