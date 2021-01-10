@@ -7,15 +7,15 @@ let numberBank = [0,1,2,3,4,5,6,7,8,9]
 
 
 
-console.log(uppercaseBank);
-console.log(lowercaseBank);
-console.log(symbolBank);
-console.log(numberBank);
+//console.log(uppercaseBank);
+//console.log(lowercaseBank);
+//console.log(symbolBank);
+//console.log(numberBank);
 
 let finalPasswordBank = []
 let finalPassword = ""
 let superFinalPassword = ""
-console.log(finalPasswordBank);
+//console.log(finalPasswordBank);
 
 //main function
 var generatePassword = function() {
@@ -33,10 +33,7 @@ var generatePassword = function() {
   var isNumber = window.confirm("Would you like numbers in your password?");
 
   var isSymbol = window.confirm("Would you like symbols in your password?");
- console.log(isLower);
- console.log(isUpper);
- console.log(isNumber);
- console.log(isSymbol);
+ 
 //ifs and for loop
   if (isLower == true) {
      finalPasswordBank.push.apply(finalPasswordBank, lowercaseBank);
