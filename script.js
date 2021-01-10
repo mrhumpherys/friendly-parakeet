@@ -2,18 +2,20 @@
 //arrays and needed variables
 let lowercaseBank = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 let uppercaseBank = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-let symbolBank = [' ','!','#','$','%','&','(',')','*','+','-','.','/',':',';','<','=','>','?','@','[',']','^','_','`','{','|','}','~']
+let symbolBank = [' ',',','!','#','$','%','&','(',')','*','+','-','.','/',':',';','<','=','>','?','@','[',']','^','_','`','{','|','}','~']
 let numberBank = [0,1,2,3,4,5,6,7,8,9]
+
+
 
 console.log(uppercaseBank);
 console.log(lowercaseBank);
 console.log(symbolBank);
 console.log(numberBank);
 
-let finalPasswordBank = ""
+let finalPasswordBank = []
 let finalPassword = ""
 let superFinalPassword = ""
-
+console.log(finalPasswordBank);
 
 //main function
 var generatePassword = function() {
@@ -37,17 +39,18 @@ var generatePassword = function() {
  console.log(isSymbol);
 //ifs and for loop
   if (isLower == true) {
-    var finalPasswordBank = finalPasswordBank += lowercaseBank
+     finalPasswordBank.push.apply(finalPasswordBank, lowercaseBank);
   }
   if (isUpper == true) {
-    var finalPasswordBank = finalPasswordBank += uppercaseBank
+    finalPasswordBank.push.apply(finalPasswordBank, uppercaseBank);
   }
   if (isNumber == true) {
-    var finalPasswordBank = finalPasswordBank += numberBank
+    finalPasswordBank.push.apply(finalPasswordBank, numberBank);
   }
   if (isSymbol == true) {
-    var finalPasswordBank = finalPasswordBank += symbolBank
+    finalPasswordBank.push.apply(finalPasswordBank, symbolBank);
   }
+  console.log(finalPasswordBank);
   for (i=0; i < length; i++) {
     var finalPassword = finalPasswordBank[Math.floor(Math.random() * finalPasswordBank.length)]
    console.log(finalPassword);
@@ -55,7 +58,7 @@ var generatePassword = function() {
     superFinalPassword = (finalPassword + superFinalPassword);
 
   
-
+  
   }
    console.log(superFinalPassword);
   return superFinalPassword;
