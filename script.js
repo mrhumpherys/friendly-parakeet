@@ -12,13 +12,14 @@ let numberBank = [0,1,2,3,4,5,6,7,8,9]
 //console.log(symbolBank);
 //console.log(numberBank);
 
-let finalPasswordBank = []
-let finalPassword = ""
-let superFinalPassword = ""
+
 //console.log(finalPasswordBank);
 
 //main function
 var generatePassword = function() {
+  let finalPasswordBank = []
+let finalPassword = ""
+let superFinalPassword = ""
   //determine lenght
   var length = +window.prompt("Choose a password length anywhere betweeen 8 and 128");
   if (length < 8 || length > 128) {
@@ -49,7 +50,7 @@ var generatePassword = function() {
   }
   console.log(finalPasswordBank);
   for (i=0; i < length; i++) {
-    var finalPassword = finalPasswordBank[Math.floor(Math.random() * finalPasswordBank.length)]
+  finalPassword = finalPasswordBank[Math.floor(Math.random() * finalPasswordBank.length)]
    console.log(finalPassword);
     
     superFinalPassword = (finalPassword + superFinalPassword);
